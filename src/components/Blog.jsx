@@ -47,7 +47,7 @@ const Blog = () => {
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            From The <span className="gradient-text">Blog</span>
+            From The <span className="text-primary-400">Blog</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
@@ -209,7 +209,7 @@ const Blog = () => {
         >
           <motion.div variants={itemVariants} className="text-center mb-8">
             <h3 className="text-xl font-semibold mb-4">
-              Explore <span className="gradient-text">Topics</span>
+              Explore <span className="text-primary-400">Topics</span>
             </h3>
             <p className="text-gray-400">
               Discover articles organized by technology and topics
@@ -243,10 +243,10 @@ const Blog = () => {
           className="text-center mt-16"
         >
           <motion.div
-            className="inline-block p-8 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 rounded-2xl border border-primary-500/20 max-w-2xl mx-auto"
+            className="inline-block p-8 rounded-2xl border border-dark-700 bg-dark-800/40 max-w-2xl mx-auto"
             whileHover={{ scale: 1.02 }}
           >
-            <h3 className="text-2xl font-bold mb-4 gradient-text">
+            <h3 className="text-2xl font-bold mb-4 text-primary-400">
               Stay Updated
             </h3>
             <p className="text-gray-400 mb-6">

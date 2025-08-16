@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Github, Mail, Phone } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 import { personalInfo } from '../data';
 
 const Navbar = () => {
@@ -56,7 +57,7 @@ const Navbar = () => {
             transition={{ delay: 0.1 }}
             className="flex items-center space-x-2"
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">
                 {personalInfo.name.split(' ').map(n => n[0]).join('')}
               </span>
@@ -81,13 +82,13 @@ const Navbar = () => {
                   className="text-gray-300 hover:text-primary-400 transition-colors duration-300 font-medium relative group"
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </motion.div>
             ))}
           </div>
 
-          {/* Contact Info & Mobile Menu Button */}
+            {/* Theme toggle, Contact Info & Mobile Menu Button */}
           <div className="flex items-center space-x-4">
             {/* Contact Icons - Hidden on mobile */}
             <div className="hidden md:flex items-center space-x-3">
@@ -140,7 +141,11 @@ const Navbar = () => {
             className="lg:hidden bg-dark-900/95 backdrop-blur-md border-b border-dark-700"
           >
             <div className="container-custom py-4">
-              <div className="flex flex-col space-y-4">
+              <div className="flex items-center justify-between pb-4">
+                <span className="text-gray-400 text-sm">Theme</span>
+                <ThemeToggle />
+              </div>
+              <div className="flex flex-col space-y-4 border-t border-dark-700 pt-4">
                 {navItems.map((item, index) => (
                   <motion.div
                     key={item.name}
@@ -176,6 +181,11 @@ const Navbar = () => {
                   </Link>
                 </div>
               </div>
+
+            {/* Theme toggle */}
+            <div className="hidden sm:flex items-center">
+              <ThemeToggle />
+            </div>
             </div>
           </motion.div>
         )}

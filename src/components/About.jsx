@@ -46,7 +46,7 @@ const About = () => {
           <motion.div variants={itemVariants} className="relative">
             {/* Main Image */}
             <div className="relative w-full max-w-md mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl transform rotate-6"></div>
+              <div className="absolute inset-0 bg-primary-600 rounded-2xl transform rotate-6"></div>
               <div className="relative bg-dark-800 rounded-2xl p-1 transform -rotate-3 hover:rotate-0 transition-transform duration-300">
                 <img
                   src="/assets/images/about/person.png"
@@ -72,7 +72,7 @@ const About = () => {
                   className="card text-center group hover:scale-105 transition-transform duration-300"
                 >
                   <stat.icon className="w-8 h-8 text-primary-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
-                  <div className="text-2xl font-bold gradient-text mb-1">{stat.value}</div>
+                  <div className="text-2xl font-bold text-primary-400 mb-1">{stat.value}</div>
                   <div className="text-gray-400 text-sm">{stat.label}</div>
                 </motion.div>
               ))}
@@ -93,7 +93,7 @@ const About = () => {
                 variants={itemVariants}
                 className="text-3xl md:text-4xl font-bold mb-6"
               >
-                I Create <span className="gradient-text">Digital Experiences</span> That Matter
+                I Create <span className="text-primary-400">Digital Experiences</span> That Matter
               </motion.h2>
             </div>
 

@@ -17,6 +17,7 @@ const ProjectDetail = () => {
       left: 0,
       behavior: 'smooth'
     });
+    if (project) document.title = `${project.title} — Muhammad Bilal`;
   }, [id]);
 
   if (!project) {
@@ -181,7 +182,7 @@ const ProjectDetail = () => {
                     e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD48L3N2Zz4=';
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-900/20 to-transparent rounded-2xl"></div>
+                <div className="absolute inset-0 rounded-2xl" />
               </div>
             </motion.div>
           </motion.div>
@@ -198,7 +199,7 @@ const ProjectDetail = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-8 text-center">
-              Technologies <span className="gradient-text">Used</span>
+              Technologies <span className="text-primary-400">Used</span>
             </motion.h2>
             <motion.div
               variants={containerVariants}
@@ -260,7 +261,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Project Gallery */}
-      <section className="py-16 bg-dark-800/30">
+  <section className="py-16 bg-dark-800/30">
         <div className="container-custom">
           <motion.div
             variants={containerVariants}
@@ -269,7 +270,7 @@ const ProjectDetail = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-12 text-center">
-              Project <span className="gradient-text">Gallery</span>
+              Project <span className="text-primary-400">Gallery</span>
             </motion.h2>
             <motion.div
               variants={containerVariants}
@@ -337,7 +338,7 @@ const ProjectDetail = () => {
             className="text-center"
           >
             <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-8">
-              More <span className="gradient-text">Projects</span>
+              More <span className="text-primary-400">Projects</span>
             </motion.h2>
             <motion.div
               variants={containerVariants}

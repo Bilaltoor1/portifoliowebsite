@@ -81,7 +81,7 @@ const Projects = () => {
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            Featured <span className="gradient-text">Projects</span>
+            Featured <span className="text-primary-400">Projects</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
@@ -108,7 +108,7 @@ const Projects = () => {
                 onClick={() => handleFilter(category)}
                 className={`px-6 py-2 rounded-lg font-medium transition-all duration-300 capitalize ${
                   filter === category
-                    ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white'
+                    ? 'bg-primary-600 text-white'
                     : 'text-gray-400 hover:text-white hover:bg-dark-700'
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -148,7 +148,7 @@ const Projects = () => {
                   />
                   
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4 flex justify-center space-x-3">
                       <motion.a
                         href={project.github}
@@ -234,10 +234,10 @@ const Projects = () => {
           className="text-center mt-16"
         >
           <motion.div
-            className="inline-block p-8 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 rounded-2xl border border-primary-500/20"
+            className="inline-block p-8 rounded-2xl border border-dark-700 bg-dark-800/40"
             whileHover={{ scale: 1.05 }}
           >
-            <h3 className="text-2xl font-bold mb-4 gradient-text">
+            <h3 className="text-2xl font-bold mb-4 text-primary-400">
               Interested in My Work?
             </h3>
             <p className="text-gray-400 mb-6 max-w-md mx-auto">

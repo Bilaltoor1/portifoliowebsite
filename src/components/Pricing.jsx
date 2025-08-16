@@ -73,7 +73,7 @@ const Pricing = () => {
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            Choose Your <span className="gradient-text">Package</span>
+            Choose Your <span className="text-primary-400">Package</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
@@ -107,7 +107,7 @@ const Pricing = () => {
                 {/* Popular Badge */}
                 {isPopular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-6 py-2 rounded-full text-sm font-medium">
+                    <div className="bg-secondary-600 text-white px-6 py-2 rounded-full text-sm font-medium">
                       Most Popular
                     </div>
                   </div>
@@ -115,7 +115,7 @@ const Pricing = () => {
 
                 {/* Header */}
                 <div className="text-center mb-8">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${getGradient(index)} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 bg-dark-700 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   
@@ -128,7 +128,7 @@ const Pricing = () => {
                   </p>
 
                   <div className="mb-6">
-                    <span className="text-4xl font-bold gradient-text">
+                    <span className="text-4xl font-bold text-primary-400">
                       ${plan.price}
                     </span>
                     <span className="text-gray-400 text-lg ml-2">
@@ -160,7 +160,7 @@ const Pricing = () => {
                 <motion.button
                   className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
                     isPopular
-                      ? 'bg-gradient-to-r from-secondary-600 to-secondary-500 hover:from-secondary-700 hover:to-secondary-600 text-white'
+                      ? 'bg-secondary-600 hover:bg-secondary-700 text-white'
                       : 'border-2 border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-white'
                   }`}
                   whileHover={{ scale: 1.05 }}
@@ -173,7 +173,7 @@ const Pricing = () => {
                 </motion.button>
 
                 {/* Background Effect */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${getGradient(index)} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl pointer-events-none`} />
+                <div className={`absolute inset-0 opacity-0 transition-opacity duration-300 rounded-xl pointer-events-none`} />
               </motion.div>
             );
           })}
@@ -261,7 +261,7 @@ const Pricing = () => {
         >
           <motion.div variants={itemVariants} className="mb-8">
             <h3 className="text-2xl font-bold mb-4">
-              Frequently Asked <span className="gradient-text">Questions</span>
+              Frequently Asked <span className="text-primary-400">Questions</span>
             </h3>
             <p className="text-gray-400 max-w-2xl mx-auto">
               Common questions about my pricing and development process
@@ -315,10 +315,10 @@ const Pricing = () => {
           className="text-center mt-16"
         >
           <motion.div
-            className="inline-block p-8 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 rounded-2xl border border-primary-500/20"
+            className="inline-block p-8 rounded-2xl border border-dark-700 bg-dark-800/40"
             whileHover={{ scale: 1.05 }}
           >
-            <h3 className="text-2xl font-bold mb-4 gradient-text">
+            <h3 className="text-2xl font-bold mb-4 text-primary-400">
               Ready to Start Your Project?
             </h3>
             <p className="text-gray-400 mb-6 max-w-md mx-auto">

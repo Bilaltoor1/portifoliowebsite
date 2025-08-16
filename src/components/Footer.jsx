@@ -50,7 +50,7 @@ const Footer = () => {
       {/* Back to Top Button */}
       <motion.button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 p-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50"
+  className="fixed bottom-8 right-8 p-3 bg-primary-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50"
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.9 }}
         initial={{ opacity: 0, y: 100 }}
@@ -71,7 +71,7 @@ const Footer = () => {
           {/* Brand Section */}
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center">
                 <span className="text-white font-bold text-xl">
                   {personalInfo.name.split(' ').map(n => n[0]).join('')}
                 </span>
@@ -187,10 +187,10 @@ const Footer = () => {
                 variants={itemVariants}
                 className="text-center group"
               >
-                <div className={`w-12 h-12 bg-gradient-to-br ${stat.color} rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-12 h-12 bg-dark-700 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
                   <stat.icon className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-2xl font-bold gradient-text mb-1">
+                <div className="text-2xl font-bold text-primary-400 mb-1">
                   {stat.value}
                 </div>
                 <div className="text-gray-400 text-sm">

@@ -61,7 +61,7 @@ const Services = () => {
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            My <span className="gradient-text">Services</span>
+            My <span className="text-primary-400">Services</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
@@ -90,11 +90,11 @@ const Services = () => {
                 whileHover={{ y: -10 }}
               >
                 {/* Background Gradient Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-600/5 to-secondary-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 {/* Icon */}
                 <div className="relative z-10 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                  <div className="w-16 h-16 bg-dark-700 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                 </div>
@@ -137,7 +137,7 @@ const Services = () => {
           <motion.div variants={itemVariants} className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold mb-4">
-                My <span className="gradient-text">Development Process</span>
+                My <span className="text-primary-400">Development Process</span>
               </h3>
               <p className="text-gray-400 leading-relaxed">
                 I follow a structured approach to ensure your project is delivered on time, 
@@ -172,7 +172,7 @@ const Services = () => {
                 variants={itemVariants}
                 className="flex items-start space-x-4 group"
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform duration-300">
+                <div className="flex-shrink-0 w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform duration-300">
                   {process.step}
                 </div>
                 <div>
@@ -209,10 +209,10 @@ const Services = () => {
 
             {/* CTA Card */}
             <motion.div
-              className="card bg-gradient-to-br from-primary-600/20 to-secondary-600/20 border-primary-500/20 text-center"
+              className="card text-center"
               whileHover={{ scale: 1.02 }}
             >
-              <h4 className="text-xl font-semibold mb-4 gradient-text">
+              <h4 className="text-xl font-semibold mb-4 text-primary-400">
                 Ready to Start Your Project?
               </h4>
               <p className="text-gray-400 mb-6">

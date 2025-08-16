@@ -42,11 +42,11 @@ const Experience = () => {
         className="relative flex items-start space-x-6 group"
       >
         {/* Timeline Line */}
-        <div className="absolute left-6 top-16 w-0.5 h-full bg-gradient-to-b from-primary-500 to-secondary-500 opacity-30" />
+  <div className="absolute left-6 top-16 w-0.5 h-full bg-primary-700 opacity-30" />
         
         {/* Icon */}
         <div className="relative z-10 flex-shrink-0">
-          <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+          <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
             <IconComponent className="w-6 h-6 text-white" />
           </div>
         </div>
@@ -89,7 +89,7 @@ const Experience = () => {
             )}
 
             {/* Hover Effect Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-600/5 to-secondary-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
           </motion.div>
         </div>
       </motion.div>
@@ -117,7 +117,7 @@ const Experience = () => {
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            Experience & <span className="gradient-text">Education</span>
+            Experience & <span className="text-primary-400">Education</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
@@ -136,7 +136,7 @@ const Experience = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.div variants={itemVariants} className="flex items-center space-x-3 mb-8">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
                 <Briefcase className="w-4 h-4 text-white" />
               </div>
               <h3 className="text-2xl font-bold">Professional Experience</h3>
@@ -162,7 +162,7 @@ const Experience = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.div variants={itemVariants} className="flex items-center space-x-3 mb-8">
-              <div className="w-8 h-8 bg-gradient-to-br from-accent-500 to-secondary-500 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-accent-600 rounded-lg flex items-center justify-center">
                 <GraduationCap className="w-4 h-4 text-white" />
               </div>
               <h3 className="text-2xl font-bold">Education</h3>
@@ -182,7 +182,7 @@ const Experience = () => {
             {/* Additional Skills Card */}
             <motion.div
               variants={itemVariants}
-              className="mt-8 card bg-gradient-to-br from-accent-600/20 to-secondary-600/20 border-accent-500/20"
+              className="mt-8 card"
             >
               <div className="flex items-center space-x-3 mb-4">
                 <Trophy className="w-6 h-6 text-accent-400" />
@@ -219,7 +219,7 @@ const Experience = () => {
         >
           <motion.div variants={itemVariants} className="text-center mb-12">
             <h3 className="text-2xl font-bold mb-4">
-              Key <span className="gradient-text">Achievements</span>
+              Key <span className="text-primary-400">Achievements</span>
             </h3>
             <p className="text-gray-400 max-w-2xl mx-auto">
               Milestones and accomplishments throughout my development journey
@@ -262,10 +262,10 @@ const Experience = () => {
                 className="card text-center group hover:scale-105 transition-all duration-300"
                 whileHover={{ y: -10 }}
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${achievement.color} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-16 h-16 bg-dark-700 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <achievement.icon className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-3xl font-bold gradient-text mb-2">
+                <div className="text-3xl font-bold text-primary-400 mb-2">
                   {achievement.number}
                 </div>
                 <div className="text-gray-400 font-medium">
@@ -285,10 +285,10 @@ const Experience = () => {
           className="text-center mt-16"
         >
           <motion.div
-            className="inline-block p-8 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 rounded-2xl border border-primary-500/20"
+            className="inline-block p-8 rounded-2xl border border-dark-700 bg-dark-800/40"
             whileHover={{ scale: 1.05 }}
           >
-            <h3 className="text-2xl font-bold mb-4 gradient-text">
+            <h3 className="text-2xl font-bold mb-4 text-primary-400">
               Let's Build Something Amazing Together
             </h3>
             <p className="text-gray-400 mb-6 max-w-md mx-auto">

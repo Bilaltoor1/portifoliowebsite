@@ -12,6 +12,7 @@ const Hero = () => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener('mousemove', handleMouseMove);
+  document.title = 'Muhammad Bilal — Full Stack Web Developer';
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
@@ -20,12 +21,12 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
+  <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900"></div>
-        
-        {/* Floating Particles */}
+  <div className="absolute inset-0" />
+
+        {/* Subtle particles */}
         {[...Array(50)].map((_, i) => (
           <motion.div
             key={i}
@@ -46,22 +47,7 @@ const Hero = () => {
           />
         ))}
 
-        {/* Mouse follower gradient */}
-        <motion.div
-          className="absolute w-96 h-96 rounded-full opacity-20 pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(14, 165, 233, 0.3) 0%, transparent 70%)',
-            left: mousePosition.x - 192,
-            top: mousePosition.y - 192,
-          }}
-          animate={{
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-          }}
-        />
+  {/* Removed large gradient blob for a cleaner look */}
       </div>
 
       <div className="container-custom relative z-10">
@@ -91,7 +77,7 @@ const Hero = () => {
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
             >
-              <span className="block gradient-text font-display">
+              <span className="block text-primary-400 font-display">
                 {personalInfo.name}
               </span>
             </motion.h1>
@@ -215,36 +201,12 @@ const Hero = () => {
             className="relative"
           >
             <div className="relative w-80 h-80 mx-auto">
-              {/* Animated Rings */}
-              <motion.div
-                className="absolute inset-0 rounded-full border-2 border-primary-500/20"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              />
-              <motion.div
-                className="absolute inset-4 rounded-full border-2 border-secondary-500/20"
-                animate={{ rotate: -360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-              />
-              <motion.div
-                className="absolute inset-8 rounded-full border-2 border-accent-500/20"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-              />
+              {/* Minimal static ring */}
+              <div className="absolute inset-0 rounded-full border-2 border-dark-700" />
               
               {/* Profile Image Container */}
-              <motion.div
-                className="absolute inset-12 rounded-full bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 p-1"
-                animate={{
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <div className="w-full h-full rounded-full bg-dark-800 flex items-center justify-center overflow-hidden">
+              <div className="absolute inset-12 rounded-full p-1">
+                <div className="w-full h-full rounded-full bg-dark-800 light:bg-white flex items-center justify-center overflow-hidden border border-dark-700">
                   {/* Placeholder for profile image */}
                   <img 
                     src="/assets/images/about/person1.png" 
@@ -256,7 +218,7 @@ const Hero = () => {
                     }}
                   />
                 </div>
-              </motion.div>
+              </div>
 
               {/* Floating Tech Icons */}
               {['⚛️', '🚀', '💻', '⚡', '🎯', '🔥'].map((emoji, index) => (

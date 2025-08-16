@@ -8,6 +8,7 @@ const ContactUs = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+  document.title = 'Contact — Muhammad Bilal';
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -114,7 +115,7 @@ const ContactUs = () => {
     <section id="contact" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900"></div>
+  <div className="absolute inset-0"></div>
         
         {/* Floating Particles */}
         {[...Array(50)].map((_, i) => (
@@ -174,7 +175,7 @@ const ContactUs = () => {
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            Let's Work <span className="gradient-text">Together</span>
+            Let's Work <span className="text-primary-400">Together</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
@@ -327,10 +328,10 @@ const ContactUs = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-12"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-accent-600 rounded-full flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 gradient-text">
+                  <h3 className="text-2xl font-bold mb-4 text-primary-400">
                     Message Sent Successfully!
                   </h3>
                   <p className="text-gray-400 mb-6">
