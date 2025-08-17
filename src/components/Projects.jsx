@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SplitHeading from './SplitHeading';
 import { ExternalLink, Github, Eye, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projects } from '../data';
@@ -77,12 +78,9 @@ const Projects = () => {
           >
             My Work
           </motion.span>
-          <motion.h2
-            variants={itemVariants}
-            className="text-3xl md:text-4xl font-bold mb-6"
-          >
-            Featured <span className="gradient-text">Projects</span>
-          </motion.h2>
+          <motion.div variants={itemVariants}>
+            <SplitHeading before="Featured" highlight="Projects" level="h2" />
+          </motion.div>
           <motion.p
             variants={itemVariants}
             className="text-gray-400 text-lg max-w-2xl mx-auto"
@@ -108,8 +106,8 @@ const Projects = () => {
                 onClick={() => handleFilter(category)}
                 className={`px-6 py-2 rounded-lg font-medium transition-all duration-300 capitalize ${
                   filter === category
-                    ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white'
-                    : 'text-gray-400 hover:text-white hover:bg-dark-700'
+                    ? 'bg-primary-600 text-muted'
+                    : 'text-gray-400 hover:text-muted hover:bg-dark-700'
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -148,13 +146,13 @@ const Projects = () => {
                   />
                   
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4 flex justify-center space-x-3">
                       <motion.a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 bg-dark-800/80 hover:bg-primary-600 text-white rounded-lg transition-colors duration-300"
+                        className="p-2 bg-dark-800/80 hover:bg-primary-600 text-muted rounded-lg transition-colors duration-300"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                       >
@@ -162,7 +160,7 @@ const Projects = () => {
                       </motion.a>
                       <Link to={`/project/${project.id}`}>
                         <motion.div
-                          className="p-2 bg-dark-800/80 hover:bg-secondary-600 text-white rounded-lg transition-colors duration-300"
+                          className="p-2 bg-dark-800/80 hover:bg-secondary-600 text-muted rounded-lg transition-colors duration-300"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                         >
@@ -174,7 +172,7 @@ const Projects = () => {
 
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-primary-600/90 text-white text-xs font-medium rounded-full">
+                    <span className="px-3 py-1 bg-primary-600/90 text-muted text-xs font-medium rounded-full">
                       {project.category[0]}
                     </span>
                   </div>
@@ -234,10 +232,10 @@ const Projects = () => {
           className="text-center mt-16"
         >
           <motion.div
-            className="inline-block p-8 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 rounded-2xl border border-primary-500/20"
+            className="inline-block p-8 rounded-2xl border border-dark-700 bg-dark-800/40"
             whileHover={{ scale: 1.05 }}
           >
-            <h3 className="text-2xl font-bold mb-4 gradient-text">
+            <h3 className="text-2xl font-bold mb-4 text-primary-400">
               Interested in My Work?
             </h3>
             <p className="text-gray-400 mb-6 max-w-md mx-auto">

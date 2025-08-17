@@ -47,7 +47,7 @@ const Blog = () => {
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            From The <span className="gradient-text">Blog</span>
+            From The <span className="text-primary-400">Blog</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
@@ -83,7 +83,7 @@ const Blog = () => {
                       }}
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-primary-600/90 text-white text-xs font-medium rounded-full">
+                      <span className="px-3 py-1 bg-primary-600/90 text-muted text-xs font-medium rounded-full">
                         Featured
                       </span>
                     </div>
@@ -158,7 +158,7 @@ const Blog = () => {
                   
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-secondary-600/90 text-white text-xs font-medium rounded-full">
+                    <span className="px-3 py-1 bg-secondary-600/90 text-muted text-xs font-medium rounded-full">
                       {post.category}
                     </span>
                   </div>
@@ -209,7 +209,7 @@ const Blog = () => {
         >
           <motion.div variants={itemVariants} className="text-center mb-8">
             <h3 className="text-xl font-semibold mb-4">
-              Explore <span className="gradient-text">Topics</span>
+              Explore <span className="text-primary-400">Topics</span>
             </h3>
             <p className="text-gray-400">
               Discover articles organized by technology and topics
@@ -224,7 +224,7 @@ const Blog = () => {
               <motion.button
                 key={index}
                 variants={itemVariants}
-                className="px-6 py-3 bg-dark-700 hover:bg-primary-600 text-gray-300 hover:text-white rounded-lg transition-all duration-300 font-medium"
+                className="px-6 py-3 bg-dark-700 hover:bg-primary-600 text-gray-300 hover:text-muted rounded-lg transition-all duration-300 font-medium"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -243,10 +243,10 @@ const Blog = () => {
           className="text-center mt-16"
         >
           <motion.div
-            className="inline-block p-8 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 rounded-2xl border border-primary-500/20 max-w-2xl mx-auto"
+            className="inline-block p-8 rounded-2xl border border-dark-700 bg-dark-800/40 max-w-2xl mx-auto"
             whileHover={{ scale: 1.02 }}
           >
-            <h3 className="text-2xl font-bold mb-4 gradient-text">
+            <h3 className="text-2xl font-bold mb-4 text-primary-400">
               Stay Updated
             </h3>
             <p className="text-gray-400 mb-6">
@@ -256,7 +256,7 @@ const Blog = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300"
+                className="flex-1 px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-muted placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300"
               />
               <motion.button
                 className="btn-primary whitespace-nowrap"

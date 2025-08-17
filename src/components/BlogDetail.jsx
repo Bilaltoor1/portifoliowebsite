@@ -16,13 +16,14 @@ const BlogDetail = () => {
       left: 0,
       behavior: 'smooth'
     });
+    if (blog) document.title = `${blog.title} — Muhammad Bilal`;
   }, [id]);
 
   if (!blog) {
     return (
       <div className="min-h-screen bg-dark-900 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Blog Post Not Found</h1>
+          <h1 className="text-4xl font-bold text-muted mb-4">Blog Post Not Found</h1>
           <p className="text-gray-400 mb-8">The blog post you're looking for doesn't exist.</p>
           <Link to="/" className="btn-primary">
             Back to Home
@@ -63,7 +64,7 @@ const BlogDetail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-dark-900 text-white">
+    <div className="min-h-screen bg-dark-900 text-muted">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-900/95 backdrop-blur-md border-b border-dark-700">
         <div className="container-custom">
@@ -104,7 +105,7 @@ const BlogDetail = () => {
               <ChevronRight size={16} />
               <span>Blog</span>
               <ChevronRight size={16} />
-              <span className="text-white">{blog.title}</span>
+              <span className="text-muted">{blog.title}</span>
             </motion.div>
 
             {/* Category */}
@@ -152,7 +153,7 @@ const BlogDetail = () => {
                     e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD48L3N2Zz4=';
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-900/20 to-transparent"></div>
+                <div className="absolute inset-0"></div>
               </div>
             </motion.div>
           </motion.div>
@@ -225,8 +226,8 @@ const BlogDetail = () => {
                 <div className="card">
                   <h3 className="font-semibold mb-4 text-primary-400">About the Author</h3>
                   <div className="flex items-center space-x-3 mb-3">
-                    <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
-                      <User size={20} className="text-white" />
+                    <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
+                      <User size={20} className="text-muted" />
                     </div>
                     <div>
                       <div className="font-medium">{blog.author}</div>
@@ -242,10 +243,10 @@ const BlogDetail = () => {
                 <div className="card">
                   <h3 className="font-semibold mb-4 text-primary-400">Share this post</h3>
                   <div className="flex space-x-2">
-                    <button className="flex-1 bg-dark-700 hover:bg-blue-600 text-white py-2 px-3 rounded-lg text-sm transition-colors duration-300">
+                    <button className="flex-1 bg-dark-700 hover:bg-blue-600 text-muted py-2 px-3 rounded-lg text-sm transition-colors duration-300">
                       Twitter
                     </button>
-                    <button className="flex-1 bg-dark-700 hover:bg-blue-800 text-white py-2 px-3 rounded-lg text-sm transition-colors duration-300">
+                    <button className="flex-1 bg-dark-700 hover:bg-blue-800 text-muted py-2 px-3 rounded-lg text-sm transition-colors duration-300">
                       LinkedIn
                     </button>
                   </div>
@@ -266,7 +267,7 @@ const BlogDetail = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-12 text-center">
-              Related <span className="gradient-text">Posts</span>
+              Related <span className="text-primary-400">Posts</span>
             </motion.h2>
             <motion.div
               variants={containerVariants}
@@ -337,7 +338,7 @@ const BlogDetail = () => {
             className="max-w-2xl mx-auto text-center"
           >
             <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-4">
-              Stay Updated with My Latest <span className="gradient-text">Insights</span>
+              Stay Updated with My Latest <span className="text-primary-400">Insights</span>
             </motion.h2>
             <motion.p variants={itemVariants} className="text-gray-400 mb-8">
               Subscribe to my newsletter for the latest updates on web development, tutorials, and tech insights.

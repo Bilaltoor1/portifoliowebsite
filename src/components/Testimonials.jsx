@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SplitHeading from './SplitHeading';
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
 import { testimonials } from '../data';
 
@@ -92,12 +93,9 @@ const Testimonials = () => {
           >
             Client Feedback
           </motion.span>
-          <motion.h2
-            variants={itemVariants}
-            className="text-3xl md:text-4xl font-bold mb-6"
-          >
-            What Clients <span className="gradient-text">Say</span>
-          </motion.h2>
+          <motion.div variants={itemVariants}>
+            <SplitHeading before="What Clients" highlight="Say" level="h2" />
+          </motion.div>
           <motion.p
             variants={itemVariants}
             className="text-gray-400 text-lg max-w-2xl mx-auto"
@@ -129,7 +127,7 @@ const Testimonials = () => {
                 }}
                 className="w-full"
               >
-                <div className="card bg-gradient-to-br from-dark-800 to-dark-700 border-primary-500/20 text-center relative overflow-hidden">
+                <div className="card text-center relative overflow-hidden">
                   {/* Background Quote Icon */}
                   <div className="absolute top-8 left-8 opacity-10">
                     <Quote size={80} className="text-primary-400" />
@@ -159,12 +157,12 @@ const Testimonials = () => {
                           e.target.nextSibling.style.display = 'flex';
                         }}
                       />
-                      <div className="w-full h-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center text-white font-bold text-lg">
+                      <div className="w-full h-full bg-primary-600 flex items-center justify-center text-muted font-bold text-lg">
                         {testimonials[currentIndex].name.split(' ').map(n => n[0]).join('')}
                       </div>
                     </div>
                     <div className="text-left">
-                      <h4 className="text-lg font-semibold text-white">
+                      <h4 className="text-lg font-semibold text-muted">
                         {testimonials[currentIndex].name}
                       </h4>
                       <p className="text-primary-400 text-sm">
@@ -181,7 +179,7 @@ const Testimonials = () => {
           <div className="flex items-center justify-center space-x-4 mt-8">
             <motion.button
               onClick={goToPrevious}
-              className="p-3 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-white rounded-lg transition-all duration-300"
+              className="p-3 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-muted rounded-lg transition-all duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -196,7 +194,7 @@ const Testimonials = () => {
                   onClick={() => goToSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentIndex 
-                      ? 'bg-gradient-to-r from-primary-500 to-secondary-500' 
+                      ? 'bg-primary-600' 
                       : 'bg-dark-600 hover:bg-dark-500'
                   }`}
                   whileHover={{ scale: 1.2 }}
@@ -207,7 +205,7 @@ const Testimonials = () => {
 
             <motion.button
               onClick={goToNext}
-              className="p-3 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-white rounded-lg transition-all duration-300"
+              className="p-3 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-muted rounded-lg transition-all duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -257,12 +255,12 @@ const Testimonials = () => {
                       e.target.nextSibling.style.display = 'flex';
                     }}
                   />
-                  <div className="w-full h-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center text-white font-bold text-sm">
+                  <div className="w-full h-full bg-primary-600 flex items-center justify-center text-muted font-bold text-sm">
                     {testimonial.name.split(' ').map(n => n[0]).join('')}
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white text-sm">
+                  <h4 className="font-semibold text-muted text-sm">
                     {testimonial.name}
                   </h4>
                   <p className="text-primary-400 text-xs">
@@ -283,10 +281,10 @@ const Testimonials = () => {
           className="text-center mt-16"
         >
           <motion.div
-            className="inline-block p-8 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 rounded-2xl border border-primary-500/20"
+            className="inline-block p-8 rounded-2xl border border-dark-700 bg-dark-800/40"
             whileHover={{ scale: 1.05 }}
           >
-            <h3 className="text-2xl font-bold mb-4 gradient-text">
+            <h3 className="text-2xl font-bold mb-4 text-primary-400">
               Ready to Join These Happy Clients?
             </h3>
             <p className="text-gray-400 mb-6 max-w-md mx-auto">

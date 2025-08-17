@@ -153,7 +153,7 @@ const Contact = () => {
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            Let's Work <span className="gradient-text">Together</span>
+            Let's Work <span className="text-primary-400">Together</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
@@ -174,7 +174,7 @@ const Contact = () => {
           >
             <motion.div variants={itemVariants}>
               <h3 className="text-2xl font-bold mb-6">
-                Let's Start a <span className="gradient-text">Conversation</span>
+                Let's Start a <span className="text-primary-400">Conversation</span>
               </h3>
               <p className="text-gray-400 leading-relaxed mb-8">
                 I'm always excited to take on new challenges and help bring innovative ideas to life. 
@@ -192,8 +192,8 @@ const Contact = () => {
                   className="card group hover:scale-105 transition-all duration-300 block"
                   whileHover={{ y: -5 }}
                 >
-                  <div className={`w-12 h-12 bg-gradient-to-br ${info.color} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <info.icon className="w-6 h-6 text-white" />
+                  <div className={`w-12 h-12 bg-dark-700 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <info.icon className="w-6 h-6 icon" />
                   </div>
                   <h4 className="font-semibold mb-2 group-hover:text-primary-400 transition-colors duration-300">
                     {info.label}
@@ -214,7 +214,7 @@ const Contact = () => {
                     href={personalInfo.social.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-white rounded-lg transition-all duration-300"
+                    className="p-3 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-muted rounded-lg transition-all duration-300"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -226,7 +226,7 @@ const Contact = () => {
                     href={personalInfo.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-white rounded-lg transition-all duration-300"
+                    className="p-3 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-muted rounded-lg transition-all duration-300"
                     whileHover={{ scale: 1.1, rotate: -5 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -235,7 +235,7 @@ const Contact = () => {
                 )}
                 <motion.span
                   href={`mailto:${personalInfo.email}`}
-                  className="p-3 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-white rounded-lg transition-all duration-300"
+                  className="p-3 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-muted rounded-lg transition-all duration-300"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -251,7 +251,7 @@ const Contact = () => {
             {/* Availability Status */}
             <motion.div
               variants={itemVariants}
-              className="card bg-gradient-to-r from-accent-600/20 to-secondary-600/20 border-accent-500/20"
+              className="card"
             >
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-3 h-3 bg-accent-500 rounded-full animate-pulse"></div>
@@ -275,7 +275,7 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                         Full Name *
                       </label>
                       <input
@@ -285,7 +285,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300"
+                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-muted placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300"
                         placeholder="Your name"
                       />
                     </div>
@@ -300,7 +300,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300"
+                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-muted placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -317,7 +317,7 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300"
+                      className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-muted placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300"
                       placeholder="Project inquiry"
                     />
                   </div>
@@ -332,7 +332,7 @@ const Contact = () => {
                         name="budget"
                         value={formData.budget}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors duration-300"
+                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-muted focus:outline-none focus:border-primary-500 transition-colors duration-300"
                       >
                         <option value="">Select budget</option>
                         {budgetRanges.map((range, index) => (
@@ -349,7 +349,7 @@ const Contact = () => {
                         name="timeline"
                         value={formData.timeline}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors duration-300"
+                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-muted focus:outline-none focus:border-primary-500 transition-colors duration-300"
                       >
                         <option value="">Select timeline</option>
                         {timelineOptions.map((option, index) => (
@@ -370,7 +370,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300 resize-none"
+                      className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-muted placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300 resize-none"
                       placeholder="Tell me about your project, goals, and any specific requirements..."
                     />
                   </div>
@@ -405,10 +405,10 @@ const Contact = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-12"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 bg-accent-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle className="w-8 h-8 text-muted" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 gradient-text">
+                  <h3 className="text-2xl font-bold mb-4 text-primary-400">
                     Message Sent Successfully!
                   </h3>
                   <p className="text-gray-400 mb-6">

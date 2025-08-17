@@ -12,6 +12,7 @@ const Hero = () => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener('mousemove', handleMouseMove);
+  document.title = 'Muhammad Bilal — Full Stack Web Developer';
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
@@ -20,16 +21,16 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
+  <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-32">
+      {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900"></div>
-        
-        {/* Floating Particles */}
+  <div className="absolute inset-0" />
+
+        {/* Subtle particles */}
         {[...Array(50)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-primary-400 rounded-full opacity-30"
+            className="absolute w-1 h-1 bg-accent rounded-full opacity-30"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -46,22 +47,7 @@ const Hero = () => {
           />
         ))}
 
-        {/* Mouse follower gradient */}
-        <motion.div
-          className="absolute w-96 h-96 rounded-full opacity-20 pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(14, 165, 233, 0.3) 0%, transparent 70%)',
-            left: mousePosition.x - 192,
-            top: mousePosition.y - 192,
-          }}
-          animate={{
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-          }}
-        />
+  {/* Removed large gradient blob for a cleaner look */}
       </div>
 
       <div className="container-custom relative z-10">
@@ -80,8 +66,8 @@ const Hero = () => {
               transition={{ delay: 0.2 }}
               className="flex items-center justify-center lg:justify-start space-x-2 mb-4"
             >
-              <Sparkles className="text-primary-400" size={20} />
-              <span className="text-primary-400 font-medium">Hello, I'm</span>
+              <Sparkles className="text-accent" size={20} />
+              <span className="text-accent font-medium">Hello, I'm</span>
             </motion.div>
 
             {/* Name */}
@@ -91,7 +77,7 @@ const Hero = () => {
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
             >
-              <span className="block gradient-text font-display">
+              <span className="block text-accent font-display">
                 {personalInfo.name}
               </span>
             </motion.h1>
@@ -101,7 +87,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-6 font-light"
+              className="text-xl md:text-2xl lg:text-3xl text-muted mb-6 font-light"
             >
               {personalInfo.title}
             </motion.h2>
@@ -111,7 +97,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-gray-400 text-lg mb-8 max-w-xl mx-auto lg:mx-0"
+              className="text-muted text-lg mb-8 max-w-xl mx-auto lg:mx-0"
             >
               {personalInfo.intro}
             </motion.p>
@@ -123,13 +109,13 @@ const Hero = () => {
               transition={{ delay: 0.6 }}
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-8 mb-8"
             >
-              <div className="flex items-center space-x-2 text-gray-400">
-                <MapPin size={16} className="text-primary-400" />
+              <div className="flex items-center space-x-2 text-muted">
+                <MapPin size={16} className="text-accent" />
                 <span>{personalInfo.location}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-accent-500 rounded-full animate-pulse"></div>
-                <span className="text-accent-400 font-medium">{personalInfo.availableFor}</span>
+                <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                <span className="text-accent font-medium">{personalInfo.availableFor}</span>
               </div>
             </motion.div>
 
@@ -146,7 +132,7 @@ const Hero = () => {
                   e.preventDefault();
                   document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="btn-primary group"
+                className="inline-flex items-center justify-center rounded-md bg-accent text-muted font-semibold px-6 py-3 transition-colors hover:opacity-90 group"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -162,7 +148,7 @@ const Hero = () => {
                   e.preventDefault();
                   document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="btn-outline group"
+                className="inline-flex items-center justify-center rounded-md border-2 border-accent text-accent font-semibold px-6 py-3 transition-colors hover:bg-accent hover:text-muted group"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -185,25 +171,22 @@ const Hero = () => {
                   href={personalInfo.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-white rounded-lg transition-all duration-300 group"
+                  className="p-3 bg-surface hover:bg-accent text-muted hover:text-muted rounded-lg transition-all duration-300 group"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <Github size={20} />
                 </motion.a>
               )}
-              <motion.span
-                href={`mailto:${personalInfo.email}`}
-                className="p-3 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-white rounded-lg transition-all duration-300 group"
+              <motion.div
+                className="p-3 bg-surface hover:bg-accent text-muted hover:text-muted rounded-lg transition-all duration-300 group"
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.9 }}
               >
-                 <Link
-                    to="/contact-us"
-                    >
+                <Link to="/contact-us" className="block">
                   <Mail size={20} />
                 </Link>
-              </motion.span>
+              </motion.div>
             </motion.div>
           </motion.div>
 
@@ -215,36 +198,12 @@ const Hero = () => {
             className="relative"
           >
             <div className="relative w-80 h-80 mx-auto">
-              {/* Animated Rings */}
-              <motion.div
-                className="absolute inset-0 rounded-full border-2 border-primary-500/20"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              />
-              <motion.div
-                className="absolute inset-4 rounded-full border-2 border-secondary-500/20"
-                animate={{ rotate: -360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-              />
-              <motion.div
-                className="absolute inset-8 rounded-full border-2 border-accent-500/20"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-              />
+              {/* Minimal static ring */}
+              <div className="absolute inset-0 rounded-full border-2 border-subtle" />
               
               {/* Profile Image Container */}
-              <motion.div
-                className="absolute inset-12 rounded-full bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 p-1"
-                animate={{
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <div className="w-full h-full rounded-full bg-dark-800 flex items-center justify-center overflow-hidden">
+              <div className="absolute inset-12 rounded-full p-1">
+                <div className="w-full h-full rounded-full bg-surface flex items-center justify-center overflow-hidden border border-subtle">
                   {/* Placeholder for profile image */}
                   <img 
                     src="/assets/images/about/person1.png" 
@@ -256,7 +215,7 @@ const Hero = () => {
                     }}
                   />
                 </div>
-              </motion.div>
+              </div>
 
               {/* Floating Tech Icons */}
               {['⚛️', '🚀', '💻', '⚡', '🎯', '🔥'].map((emoji, index) => (
@@ -291,7 +250,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1 }}
         onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 hover:text-primary-400 transition-colors duration-300"
+  className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-muted hover:text-accent transition-colors duration-300"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

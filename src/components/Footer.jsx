@@ -50,7 +50,8 @@ const Footer = () => {
       {/* Back to Top Button */}
       <motion.button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 p-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50"
+        // hidden on small screens, visible on large screens and up
+        className="hidden lg:inline-flex fixed bottom-8 right-8 p-3 bg-primary-600 text-muted rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50"
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.9 }}
         initial={{ opacity: 0, y: 100 }}
@@ -71,13 +72,13 @@ const Footer = () => {
           {/* Brand Section */}
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-xl">
+              <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center">
+                <span className="text-muted font-bold text-xl">
                   {personalInfo.name.split(' ').map(n => n[0]).join('')}
                 </span>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">
+                <h3 className="text-xl font-bold text-muted">
                   {personalInfo.name}
                 </h3>
                 <p className="text-primary-400 text-sm">
@@ -97,7 +98,7 @@ const Footer = () => {
                   href={personalInfo.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-white rounded-lg transition-all duration-300"
+                  className="p-2 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-muted rounded-lg transition-all duration-300"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -106,7 +107,7 @@ const Footer = () => {
               )}
               <motion.a
                 href={`mailto:${personalInfo.email}`}
-                className="p-2 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-white rounded-lg transition-all duration-300"
+                className="p-2 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-muted rounded-lg transition-all duration-300"
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -122,7 +123,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-semibold text-white mb-6">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-muted mb-6">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -145,7 +146,7 @@ const Footer = () => {
 
           {/* Services */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-semibold text-white mb-6">Services</h4>
+            <h4 className="text-lg font-semibold text-muted mb-6">Services</h4>
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
@@ -187,10 +188,10 @@ const Footer = () => {
                 variants={itemVariants}
                 className="text-center group"
               >
-                <div className={`w-12 h-12 bg-gradient-to-br ${stat.color} rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                  <stat.icon className="w-6 h-6 text-white" />
+                <div className={`w-12 h-12 bg-dark-700 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                  <stat.icon className="w-6 h-6 text-muted" />
                 </div>
-                <div className="text-2xl font-bold gradient-text mb-1">
+                <div className="text-2xl font-bold text-primary-400 mb-1">
                   {stat.value}
                 </div>
                 <div className="text-gray-400 text-sm">

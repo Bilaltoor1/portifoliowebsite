@@ -8,6 +8,7 @@ const ContactUs = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+  document.title = 'Contact — Muhammad Bilal';
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -114,7 +115,7 @@ const ContactUs = () => {
     <section id="contact" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900"></div>
+  <div className="absolute inset-0"></div>
         
         {/* Floating Particles */}
         {[...Array(50)].map((_, i) => (
@@ -174,7 +175,7 @@ const ContactUs = () => {
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            Let's Work <span className="gradient-text">Together</span>
+            Let's Work <span className="text-primary-400">Together</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
@@ -207,7 +208,7 @@ const ContactUs = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300"
+                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-muted  placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300"
                         placeholder="Your name"
                       />
                     </div>
@@ -222,7 +223,7 @@ const ContactUs = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300"
+                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-muted  placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -239,7 +240,7 @@ const ContactUs = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300"
+                      className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-muted  placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300"
                       placeholder="Project inquiry"
                     />
                   </div>
@@ -254,7 +255,7 @@ const ContactUs = () => {
                         name="budget"
                         value={formData.budget}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors duration-300"
+                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-muted  focus:outline-none focus:border-primary-500 transition-colors duration-300"
                       >
                         <option value="">Select budget</option>
                         {budgetRanges.map((range, index) => (
@@ -271,7 +272,7 @@ const ContactUs = () => {
                         name="timeline"
                         value={formData.timeline}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors duration-300"
+                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-muted  focus:outline-none focus:border-primary-500 transition-colors duration-300"
                       >
                         <option value="">Select timeline</option>
                         {timelineOptions.map((option, index) => (
@@ -292,7 +293,7 @@ const ContactUs = () => {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300 resize-none"
+                      className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-muted  placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors duration-300 resize-none"
                       placeholder="Tell me about your project, goals, and any specific requirements..."
                     />
                   </div>
@@ -327,10 +328,10 @@ const ContactUs = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-12"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 bg-accent-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle className="w-8 h-8 text-muted " />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 gradient-text">
+                  <h3 className="text-2xl font-bold mb-4 text-primary-400">
                     Message Sent Successfully!
                   </h3>
                   <p className="text-gray-400 mb-6">

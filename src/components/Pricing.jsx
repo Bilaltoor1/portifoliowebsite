@@ -73,7 +73,7 @@ const Pricing = () => {
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            Choose Your <span className="gradient-text">Package</span>
+            Choose Your <span className="text-primary-400">Package</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
@@ -107,7 +107,7 @@ const Pricing = () => {
                 {/* Popular Badge */}
                 {isPopular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-6 py-2 rounded-full text-sm font-medium">
+                    <div className="bg-accent text-muted px-6 py-2 rounded-full text-sm font-medium">
                       Most Popular
                     </div>
                   </div>
@@ -115,23 +115,23 @@ const Pricing = () => {
 
                 {/* Header */}
                 <div className="text-center mb-8">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${getGradient(index)} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className="w-8 h-8 text-white" />
+                  <div className={`w-16 h-16 bg-elevated rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className="w-8 h-8 text-accent" />
                   </div>
                   
                   <h3 className="text-2xl font-bold mb-2 group-hover:text-primary-400 transition-colors duration-300">
                     {plan.title}
                   </h3>
                   
-                  <p className="text-gray-400 mb-6">
+                  <p className="text-muted mb-6">
                     {plan.description}
                   </p>
 
                   <div className="mb-6">
-                    <span className="text-4xl font-bold gradient-text">
+                    <span className="text-4xl font-bold text-accent">
                       ${plan.price}
                     </span>
-                    <span className="text-gray-400 text-lg ml-2">
+                    <span className="text-muted text-lg ml-2">
                       starting from
                     </span>
                   </div>
@@ -145,11 +145,11 @@ const Pricing = () => {
                       className="flex items-center space-x-3"
                     >
                       {feature.available ? (
-                        <Check size={18} className="text-accent-400 flex-shrink-0" />
+                        <Check size={18} className="text-accent flex-shrink-0" />
                       ) : (
-                        <X size={18} className="text-gray-500 flex-shrink-0" />
+                        <X size={18} className="text-muted flex-shrink-0" />
                       )}
-                      <span className={`${feature.available ? 'text-gray-300' : 'text-gray-500'}`}>
+                      <span className={`${feature.available ? 'text-foreground' : 'text-muted'}`}>
                         {feature.name}
                       </span>
                     </div>
@@ -160,8 +160,8 @@ const Pricing = () => {
                 <motion.button
                   className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
                     isPopular
-                      ? 'bg-gradient-to-r from-secondary-600 to-secondary-500 hover:from-secondary-700 hover:to-secondary-600 text-white'
-                      : 'border-2 border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-white'
+                      ? 'bg-accent hover:bg-accent/90 text-muted'
+                      : 'border-2 border-subtle text-accent hover:bg-accent hover:text-muted'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -173,7 +173,7 @@ const Pricing = () => {
                 </motion.button>
 
                 {/* Background Effect */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${getGradient(index)} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl pointer-events-none`} />
+                <div className={`absolute inset-0 opacity-0 transition-opacity duration-300 rounded-xl pointer-events-none`} />
               </motion.div>
             );
           })}
@@ -190,10 +190,10 @@ const Pricing = () => {
           {/* Custom Solutions */}
           <motion.div variants={itemVariants} className="card">
             <h3 className="text-xl font-semibold mb-4 flex items-center">
-              <Crown className="w-6 h-6 text-accent-400 mr-3" />
+              <Crown className="w-6 h-6 text-accent mr-3" />
               Custom Solutions
             </h3>
-            <p className="text-gray-400 mb-6">
+            <p className="text-muted mb-6">
               Need something specific? I offer custom development solutions tailored to your unique requirements.
             </p>
             <ul className="space-y-2 mb-6">
@@ -205,8 +205,8 @@ const Pricing = () => {
                 'Ongoing maintenance & support'
               ].map((item, index) => (
                 <li key={index} className="flex items-center space-x-2">
-                  <Check size={16} className="text-accent-400" />
-                  <span className="text-gray-300 text-sm">{item}</span>
+                  <Check size={16} className="text-accent" />
+                  <span className="text-muted text-sm">{item}</span>
                 </li>
               ))}
             </ul>
@@ -225,10 +225,10 @@ const Pricing = () => {
           {/* What's Included */}
           <motion.div variants={itemVariants} className="card">
             <h3 className="text-xl font-semibold mb-4 flex items-center">
-              <Zap className="w-6 h-6 text-primary-400 mr-3" />
+              <Zap className="w-6 h-6 text-accent mr-3" />
               What's Included
             </h3>
-            <p className="text-gray-400 mb-6">
+            <p className="text-muted mb-6">
               All packages include these essential features and services.
             </p>
             <ul className="space-y-2 mb-6">
@@ -243,8 +243,8 @@ const Pricing = () => {
                 '30-day support period'
               ].map((item, index) => (
                 <li key={index} className="flex items-center space-x-2">
-                  <Check size={16} className="text-primary-400" />
-                  <span className="text-gray-300 text-sm">{item}</span>
+                  <Check size={16} className="text-accent" />
+                  <span className="text-muted text-sm">{item}</span>
                 </li>
               ))}
             </ul>
@@ -261,7 +261,7 @@ const Pricing = () => {
         >
           <motion.div variants={itemVariants} className="mb-8">
             <h3 className="text-2xl font-bold mb-4">
-              Frequently Asked <span className="gradient-text">Questions</span>
+              Frequently Asked <span className="text-primary-400">Questions</span>
             </h3>
             <p className="text-gray-400 max-w-2xl mx-auto">
               Common questions about my pricing and development process
@@ -315,13 +315,13 @@ const Pricing = () => {
           className="text-center mt-16"
         >
           <motion.div
-            className="inline-block p-8 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 rounded-2xl border border-primary-500/20"
+            className="inline-block p-8 rounded-2xl border border-subtle bg-elevated"
             whileHover={{ scale: 1.05 }}
           >
-            <h3 className="text-2xl font-bold mb-4 gradient-text">
+            <h3 className="text-2xl font-bold mb-4 text-accent">
               Ready to Start Your Project?
             </h3>
-            <p className="text-gray-400 mb-6 max-w-md mx-auto">
+            <p className="text-muted mb-6 max-w-md mx-auto">
               Let's discuss your requirements and find the perfect solution for your needs
             </p>
             <motion.a
