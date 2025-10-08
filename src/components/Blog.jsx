@@ -224,7 +224,7 @@ const Blog = () => {
               <motion.button
                 key={index}
                 variants={itemVariants}
-                className="px-6 py-3 bg-dark-700 hover:bg-primary-600 text-gray-300 hover:text-white rounded-lg transition-all duration-300 font-medium"
+                className="px-6 py-3 bg-dark-700 hover:bg-primary-600 text-secondary hover:text-white rounded-lg transition-all duration-300 font-medium"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

@@ -198,7 +198,7 @@ const ContactUs = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-secondary mb-2">
                         Full Name *
                       </label>
                       <input
@@ -213,7 +213,7 @@ const ContactUs = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-secondary mb-2">
                         Email Address *
                       </label>
                       <input
@@ -230,7 +230,7 @@ const ContactUs = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="subject" className="block text-sm font-medium text-secondary mb-2">
                       Subject *
                     </label>
                     <input
@@ -247,7 +247,7 @@ const ContactUs = () => {
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="budget" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label htmlFor="budget" className="block text-sm font-medium text-secondary mb-2">
                         Budget Range
                       </label>
                       <select
@@ -264,7 +264,7 @@ const ContactUs = () => {
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="timeline" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label htmlFor="timeline" className="block text-sm font-medium text-secondary mb-2">
                         Timeline
                       </label>
                       <select
@@ -283,7 +283,7 @@ const ContactUs = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-secondary mb-2">
                       Project Details *
                     </label>
                     <textarea

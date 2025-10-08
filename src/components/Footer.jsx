@@ -154,7 +154,7 @@ const Footer = () => {
                     whileHover={{ x: 5 }}
                   >
                     <Code size={14} className="text-primary-400 group-hover:text-secondary-400 transition-colors duration-300" />
-                    <span className="group-hover:text-gray-300 transition-colors duration-300">
+                    <span className="group-hover:text-secondary transition-colors duration-300">
                       {service}
                     </span>
                   </motion.div>

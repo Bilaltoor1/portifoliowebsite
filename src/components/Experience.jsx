@@ -67,7 +67,7 @@ const Experience = () => {
             <h3 className="text-xl font-semibold mb-2 group-hover:text-primary-400 transition-colors duration-300">
               {isExperience ? item.title : item.degree}
             </h3>
-            <h4 className="text-gray-300 mb-4 font-medium">
+            <h4 className="text-secondary mb-4 font-medium">
               {isExperience ? item.company : item.institution}
             </h4>
 
@@ -201,7 +201,7 @@ const Experience = () => {
                 ].map((skill, idx) => (
                   <div key={idx} className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-accent-400 rounded-full" />
-                    <span className="text-gray-300 text-sm">{skill}</span>
+                    <span className="text-secondary text-sm">{skill}</span>
                   </div>
                 ))}
               </div>

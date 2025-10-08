@@ -100,7 +100,7 @@ const About = () => {
             {/* Description */}
             <motion.p
               variants={itemVariants}
-              className="text-gray-300 text-lg leading-relaxed"
+              className="text-secondary text-lg leading-relaxed"
             >
               {personalInfo.about}
             </motion.p>
@@ -126,7 +126,7 @@ const About = () => {
                     className="flex items-center space-x-2"
                   >
                     <div className="w-2 h-2 bg-accent-400 rounded-full"></div>
-                    <span className="text-gray-300">{skill}</span>
+                    <span className="text-secondary">{skill}</span>
                   </motion.div>
                 ))}
               </div>
@@ -180,7 +180,7 @@ const About = () => {
           className="mt-20"
         >
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <h3 className="text-2xl font-semibold text-gray-300 mb-4">
+            <h3 className="text-2xl font-semibold text-secondary mb-4">
               Trusted By Clients From
             </h3>
             <p className="text-gray-400">

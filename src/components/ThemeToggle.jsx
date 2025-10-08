@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Sun, Moon } from 'lucide-react';
+import { HiSun, HiMoon } from 'react-icons/hi';
 
 const ThemeToggle = ({ className = '' }) => {
   const [theme, setTheme] = useState(() => {
     try {
       const saved = localStorage.getItem('theme');
       if (saved) return saved;
-      // default to dark
       return 'dark';
     } catch (e) {
-      // ignore
+      return 'dark';
     }
-    return 'dark';
   });
 
   useEffect(() => {
@@ -35,10 +33,23 @@ const ThemeToggle = ({ className = '' }) => {
     <button
       onClick={toggle}
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
-      className={`p-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500/60 ${className} bg-white/10 dark:bg-dark-800/40 text-dark-900 dark:text-gray-200`}
+      className={`relative p-2.5 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${className}`}
+      style={{
+        background: 'var(--card-bg)',
+        borderColor: 'var(--card-border)',
+        boxShadow: 'var(--shadow-sm)',
+        color: 'var(--accent-primary)',
+        border: '1px solid'
+      }}
       title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
     >
-      {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+      <div className="relative w-5 h-5 flex items-center justify-center">
+        {theme === 'dark' ? (
+          <HiSun className="w-5 h-5 transition-transform duration-300 hover:rotate-90 hover:scale-110" />
+        ) : (
+          <HiMoon className="w-5 h-5 transition-transform duration-300 hover:-rotate-12 hover:scale-110" />
+        )}
+      </div>
     </button>
   );
 };

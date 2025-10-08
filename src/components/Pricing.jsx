@@ -149,7 +149,7 @@ const Pricing = () => {
                       ) : (
                         <X size={18} className="text-gray-500 flex-shrink-0" />
                       )}
-                      <span className={`${feature.available ? 'text-gray-300' : 'text-gray-500'}`}>
+                      <span className={`${feature.available ? 'text-secondary' : 'text-gray-500'}`}>
                         {feature.name}
                       </span>
                     </div>
@@ -206,7 +206,7 @@ const Pricing = () => {
               ].map((item, index) => (
                 <li key={index} className="flex items-center space-x-2">
                   <Check size={16} className="text-accent-400" />
-                  <span className="text-gray-300 text-sm">{item}</span>
+                  <span className="text-secondary text-sm">{item}</span>
                 </li>
               ))}
             </ul>
@@ -244,7 +244,7 @@ const Pricing = () => {
               ].map((item, index) => (
                 <li key={index} className="flex items-center space-x-2">
                   <Check size={16} className="text-primary-400" />
-                  <span className="text-gray-300 text-sm">{item}</span>
+                  <span className="text-secondary text-sm">{item}</span>
                 </li>
               ))}
             </ul>

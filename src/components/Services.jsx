@@ -201,7 +201,7 @@ const Services = () => {
                     className="flex items-center space-x-3"
                   >
                     <CheckCircle size={20} className="text-accent-400 flex-shrink-0" />
-                    <span className="text-gray-300">{feature}</span>
+                    <span className="text-secondary">{feature}</span>
                   </motion.div>
                 ))}
               </div>

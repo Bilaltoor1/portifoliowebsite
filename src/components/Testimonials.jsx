@@ -143,7 +143,7 @@ const Testimonials = () => {
                   </div>
 
                   {/* Testimonial Text */}
-                  <blockquote className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8 relative z-10 max-w-3xl mx-auto">
+                  <blockquote className="text-lg md:text-xl text-secondary leading-relaxed mb-8 relative z-10 max-w-3xl mx-auto">
                     "{testimonials[currentIndex].text}"
                   </blockquote>
 
@@ -241,7 +241,7 @@ const Testimonials = () => {
               </div>
 
               {/* Text */}
-              <p className="text-gray-300 leading-relaxed mb-6 text-sm">
+              <p className="text-secondary leading-relaxed mb-6 text-sm">
                 "{testimonial.text.substring(0, 150)}..."
               </p>
 

@@ -63,7 +63,7 @@ const ProjectDetail = () => {
           <div className="flex items-center justify-between h-16">
             <motion.button
               onClick={() => navigate('/')}
-              className="flex items-center space-x-2 text-gray-300 hover:text-primary-400 transition-colors duration-300"
+              className="flex items-center space-x-2 text-secondary hover:text-primary-400 transition-colors duration-300"
               whileHover={{ x: -5 }}
             >
               <ArrowLeft size={20} />
@@ -108,7 +108,7 @@ const ProjectDetail = () => {
                 {project.title}
               </h1>
               
-              <p className="text-xl text-gray-300 leading-relaxed mb-8">
+              <p className="text-xl text-secondary leading-relaxed mb-8">
                 {project.summary}
               </p>
 
@@ -234,7 +234,7 @@ const ProjectDetail = () => {
             <motion.div variants={itemVariants} className="lg:col-span-2">
               <h2 className="text-2xl font-bold mb-6">Project Overview</h2>
               <div className="prose prose-invert max-w-none">
-                <p className="text-gray-300 leading-relaxed text-lg">
+                <p className="text-secondary leading-relaxed text-lg">
                   {project.description}
                 </p>
               </div>
@@ -251,7 +251,7 @@ const ProjectDetail = () => {
                     className="flex items-start space-x-3"
                   >
                     <CheckCircle size={20} className="text-accent-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300">{feature}</span>
+                    <span className="text-secondary">{feature}</span>
                   </motion.li>
                 ))}
               </ul>

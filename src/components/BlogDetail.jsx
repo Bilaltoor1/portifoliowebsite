@@ -57,7 +57,7 @@ const BlogDetail = () => {
   // Function to render blog content paragraphs
   const renderContent = (content) => {
     return content.split('\n\n').map((paragraph, index) => (
-      <p key={index} className="text-gray-300 leading-relaxed mb-6 text-lg">
+      <p key={index} className="text-secondary leading-relaxed mb-6 text-lg">
         {paragraph}
       </p>
     ));
@@ -71,7 +71,7 @@ const BlogDetail = () => {
           <div className="flex items-center justify-between h-16">
             <motion.button
               onClick={() => navigate('/')}
-              className="flex items-center space-x-2 text-gray-300 hover:text-primary-400 transition-colors duration-300"
+              className="flex items-center space-x-2 text-secondary hover:text-primary-400 transition-colors duration-300"
               whileHover={{ x: -5 }}
             >
               <ArrowLeft size={20} />
@@ -79,7 +79,7 @@ const BlogDetail = () => {
             </motion.button>
             
             <motion.button
-              className="flex items-center space-x-2 text-gray-300 hover:text-primary-400 transition-colors duration-300"
+              className="flex items-center space-x-2 text-secondary hover:text-primary-400 transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
             >
               <Share2 size={20} />
@@ -174,7 +174,7 @@ const BlogDetail = () => {
             <motion.article variants={itemVariants} className="lg:col-span-3">
               <div className="prose prose-lg prose-invert max-w-none">
                 {/* Blog Excerpt */}
-                <div className="text-xl text-gray-300 font-medium mb-8 p-6 bg-dark-800/50 rounded-xl border border-dark-600">
+                <div className="text-xl text-secondary font-medium mb-8 p-6 bg-dark-800/50 rounded-xl border border-dark-600">
                   {blog.excerpt}
                 </div>
 
@@ -190,7 +190,7 @@ const BlogDetail = () => {
                     {blog.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-dark-700 text-gray-300 text-sm rounded-full hover:bg-primary-600/20 hover:text-primary-400 transition-colors duration-300 cursor-pointer"
+                        className="px-3 py-1 bg-dark-700 text-secondary text-sm rounded-full hover:bg-primary-600/20 hover:text-primary-400 transition-colors duration-300 cursor-pointer"
                       >
                         #{tag}
                       </span>
