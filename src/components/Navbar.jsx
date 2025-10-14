@@ -116,28 +116,12 @@ const Navbar = () => {
               >
                 <FaGithub className="w-5 h-5" />
               </motion.a>
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.9 }}
-              >
-                <Link
-                  to="/contact-us"
-                  className="p-2.5 rounded-xl transition-all duration-300 hover:scale-110"
-                  style={{
-                    color: 'var(--text-muted)',
-                    background: 'var(--card-bg)',
-                    border: '1px solid var(--card-border)'
-                  }}
-                >
-                  <FaEnvelope className="w-5 h-5" />
-                </Link>
-              </motion.div>
+            
             </div>
 
-            <div className="hidden sm:flex">
+            {/* <div className="hidden sm:flex">
               <ThemeToggle />
-            </div>
+            </div> */}
 
             <motion.button
               initial={{ opacity: 0, scale: 0 }}
@@ -170,11 +154,11 @@ const Navbar = () => {
             }}
           >
             <div className="container-custom py-6">
-              <div className="flex items-center justify-between pb-4 mb-4" style={{ borderBottom: '1px solid var(--border-color)' }}>
+              {/* <div className="flex items-center justify-between pb-4 mb-4" style={{ borderBottom: '1px solid var(--border-color)' }}>
                 <span style={{ color: 'var(--text-muted)' }} className="text-sm font-medium">Theme</span>
                 <ThemeToggle />
               </div>
-              
+               */}
               <div className="flex flex-col space-y-3">
                 {navItems.map((item, index) => (
                   <motion.div

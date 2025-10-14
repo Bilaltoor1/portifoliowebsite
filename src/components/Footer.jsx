@@ -46,11 +46,21 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-dark-900 border-t border-dark-700">
+    <footer 
+      style={{ 
+        background: 'var(--bg-secondary)', 
+        borderTop: '1px solid var(--border-color)' 
+      }}
+    >
       {/* Back to Top Button */}
       <motion.button
         onClick={scrollToTop}
-  className="fixed bottom-8 right-8 p-3 bg-primary-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50"
+        className="fixed bottom-8 right-8 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50"
+        style={{
+          background: 'var(--gradient-primary)',
+          color: 'var(--bg-primary)',
+          boxShadow: 'var(--shadow-lg)'
+        }}
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.9 }}
         initial={{ opacity: 0, y: 100 }}
@@ -71,22 +81,25 @@ const Footer = () => {
           {/* Brand Section */}
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-xl">
+              <div 
+                className="w-12 h-12 rounded-xl flex items-center justify-center"
+                style={{ background: 'var(--gradient-primary)' }}
+              >
+                <span className="font-bold text-xl" style={{ color: 'var(--bg-primary)' }}>
                   {personalInfo.name.split(' ').map(n => n[0]).join('')}
                 </span>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">
+                <h3 className="text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
                   {personalInfo.name}
                 </h3>
-                <p className="text-primary-400 text-sm">
+                <p className="text-sm" style={{ color: 'var(--accent-primary)' }}>
                   {personalInfo.title}
                 </p>
               </div>
             </div>
             
-            <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
+            <p className="leading-relaxed mb-6 max-w-md" style={{ color: 'var(--text-muted)' }}>
               Passionate about creating exceptional digital experiences through clean code, 
               modern design, and innovative solutions. Let's build something amazing together.
             </p>
@@ -97,7 +110,12 @@ const Footer = () => {
                   href={personalInfo.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-white rounded-lg transition-all duration-300"
+                  className="p-2 rounded-lg transition-all duration-300"
+                  style={{
+                    background: 'var(--card-bg)',
+                    color: 'var(--text-muted)',
+                    border: '1px solid var(--card-border)'
+                  }}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -106,7 +124,12 @@ const Footer = () => {
               )}
               <motion.a
                 href={`mailto:${personalInfo.email}`}
-                className="p-2 bg-dark-700 hover:bg-primary-600 text-gray-400 hover:text-white rounded-lg transition-all duration-300"
+                className="p-2 rounded-lg transition-all duration-300"
+                style={{
+                  background: 'var(--card-bg)',
+                  color: 'var(--text-muted)',
+                  border: '1px solid var(--card-border)'
+                }}
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -114,15 +137,15 @@ const Footer = () => {
               </motion.a>
             </div>
 
-            <div className="flex items-center space-x-2 text-sm text-gray-500">
-              <div className="w-2 h-2 bg-accent-500 rounded-full animate-pulse"></div>
+            <div className="flex items-center space-x-2 text-sm" style={{ color: 'var(--text-muted)' }}>
+              <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: 'var(--accent-success)' }}></div>
               <span>{personalInfo.availableFor}</span>
             </div>
           </motion.div>
 
           {/* Quick Links */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-semibold text-white mb-6">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-6" style={{ color: 'var(--text-primary)' }}>Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -132,10 +155,11 @@ const Footer = () => {
                       e.preventDefault();
                       document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="text-gray-400 hover:text-primary-400 transition-colors duration-300 flex items-center space-x-2 group"
+                    className="transition-colors duration-300 flex items-center space-x-2 group"
+                    style={{ color: 'var(--text-muted)' }}
                     whileHover={{ x: 5 }}
                   >
-                    <span className="w-1 h-1 bg-primary-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                    <span className="w-1 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'var(--accent-primary)' }}></span>
                     <span>{link.name}</span>
                   </motion.a>
                 </li>
@@ -145,16 +169,17 @@ const Footer = () => {
 
           {/* Services */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-semibold text-white mb-6">Services</h4>
+            <h4 className="text-lg font-semibold mb-6" style={{ color: 'var(--text-primary)' }}>Services</h4>
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
                   <motion.div
-                    className="text-gray-400 flex items-center space-x-2 group"
+                    className="flex items-center space-x-2 group"
+                    style={{ color: 'var(--text-muted)' }}
                     whileHover={{ x: 5 }}
                   >
-                    <Code size={14} className="text-primary-400 group-hover:text-secondary-400 transition-colors duration-300" />
-                    <span className="group-hover:text-secondary transition-colors duration-300">
+                    <Code size={14} style={{ color: 'var(--accent-primary)' }} className="transition-colors duration-300" />
+                    <span className="transition-colors duration-300">
                       {service}
                     </span>
                   </motion.div>
@@ -187,13 +212,16 @@ const Footer = () => {
                 variants={itemVariants}
                 className="text-center group"
               >
-                <div className={`w-12 h-12 bg-dark-700 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                  <stat.icon className="w-6 h-6 text-white" />
+                <div 
+                  className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
+                  style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)' }}
+                >
+                  <stat.icon className="w-6 h-6" style={{ color: 'var(--accent-primary)' }} />
                 </div>
-                <div className="text-2xl font-bold text-primary-400 mb-1">
+                <div className="text-2xl font-bold mb-1" style={{ color: 'var(--accent-primary)' }}>
                   {stat.value}
                 </div>
-                <div className="text-gray-400 text-sm">
+                <div className="text-sm" style={{ color: 'var(--text-muted)' }}>
                   {stat.label}
                 </div>
               </motion.div>
@@ -207,26 +235,27 @@ const Footer = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="border-t border-dark-700 pt-8 mt-8"
+          className="pt-8 mt-8"
+          style={{ borderTop: '1px solid var(--border-color)' }}
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-2 text-gray-400 text-sm">
+            <div className="flex items-center space-x-2 text-sm" style={{ color: 'var(--text-muted)' }}>
               <span>© {currentYear} {personalInfo.name}. Made with</span>
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1, repeat: Infinity, repeatDelay: 2 }}
               >
-                <Heart size={16} className="text-red-500 fill-current" />
+                <Heart size={16} className="fill-current" style={{ color: 'var(--accent-secondary)' }} />
               </motion.div>
               <span>and lots of coffee</span>
             </div>
 
-            <div className="flex items-center space-x-6 text-sm text-gray-400">
+            <div className="flex items-center space-x-6 text-sm" style={{ color: 'var(--text-muted)' }}>
               <motion.button
                 onClick={() => {
                   document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="hover:text-primary-400 transition-colors duration-300"
+                className="transition-colors duration-300"
                 whileHover={{ y: -2 }}
               >
                 Privacy Policy
@@ -235,7 +264,7 @@ const Footer = () => {
                 onClick={() => {
                   document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="hover:text-primary-400 transition-colors duration-300"
+                className="transition-colors duration-300"
                 whileHover={{ y: -2 }}
               >
                 Terms of Service
@@ -250,10 +279,12 @@ const Footer = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-center mt-8 pt-8 border-t border-dark-700"
+          className="text-center mt-8 pt-8"
+          style={{ borderTop: '1px solid var(--border-color)' }}
         >
           <motion.p
-            className="text-gray-400 text-sm italic"
+            className="text-sm italic"
+            style={{ color: 'var(--text-muted)' }}
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 3, repeat: Infinity }}
           >

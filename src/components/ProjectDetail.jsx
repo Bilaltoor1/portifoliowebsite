@@ -22,10 +22,13 @@ const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-dark-900 flex items-center justify-center">
+      <div 
+        className="min-h-screen flex items-center justify-center"
+        style={{ background: 'var(--bg-primary)' }}
+      >
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Project Not Found</h1>
-          <p className="text-gray-400 mb-8">The project you're looking for doesn't exist.</p>
+          <h1 className="text-4xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>Project Not Found</h1>
+          <p className="mb-8" style={{ color: 'var(--text-muted)' }}>The project you're looking for doesn't exist.</p>
           <Link to="/" className="btn-primary">
             Back to Home
           </Link>
@@ -56,14 +59,21 @@ const ProjectDetail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-dark-900 text-white">
+    <div className="min-h-screen" style={{ background: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-900/95 backdrop-blur-md border-b border-dark-700">
+      <nav 
+        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md"
+        style={{ 
+          background: 'var(--surface)',
+          borderBottom: '1px solid var(--border-color)'
+        }}
+      >
         <div className="container-custom">
           <div className="flex items-center justify-between h-16">
             <motion.button
               onClick={() => navigate('/')}
-              className="flex items-center space-x-2 text-secondary hover:text-primary-400 transition-colors duration-300"
+              className="flex items-center space-x-2 transition-colors duration-300"
+              style={{ color: 'var(--text-secondary)' }}
               whileHover={{ x: -5 }}
             >
               <ArrowLeft size={20} />
@@ -75,7 +85,8 @@ const ProjectDetail = () => {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-gray-400 hover:text-primary-400 transition-colors duration-300"
+                className="p-2 transition-colors duration-300"
+                style={{ color: 'var(--text-muted)' }}
                 whileHover={{ scale: 1.1 }}
               >
                 <Github size={20} />
@@ -97,18 +108,25 @@ const ProjectDetail = () => {
             {/* Project Info */}
             <motion.div variants={itemVariants}>
               <div className="flex items-center space-x-2 mb-4">
-                <span className="px-3 py-1 bg-primary-600/20 text-primary-400 text-sm font-medium rounded-full border border-primary-500/30">
+                <span 
+                  className="px-3 py-1 text-sm font-medium rounded-full"
+                  style={{ 
+                    background: 'var(--card-bg)',
+                    color: 'var(--accent-primary)',
+                    border: '1px solid var(--card-border)'
+                  }}
+                >
                   {project.category[0]}
                 </span>
-                <span className="text-gray-400 text-sm">•</span>
-                <span className="text-gray-400 text-sm">{project.year}</span>
+                <span style={{ color: 'var(--text-muted)' }} className="text-sm">•</span>
+                <span style={{ color: 'var(--text-muted)' }} className="text-sm">{project.year}</span>
               </div>
               
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 {project.title}
               </h1>
               
-              <p className="text-xl text-secondary leading-relaxed mb-8">
+              <p className="text-xl leading-relaxed mb-8" style={{ color: 'var(--text-secondary)' }}>
                 {project.summary}
               </p>
 
@@ -141,30 +159,30 @@ const ProjectDetail = () => {
               {/* Project Meta */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center space-x-3">
-                  <User size={16} className="text-primary-400" />
+                  <User size={16} style={{ color: 'var(--accent-primary)' }} />
                   <div>
-                    <div className="text-sm text-gray-400">Client</div>
+                    <div className="text-sm" style={{ color: 'var(--text-muted)' }}>Client</div>
                     <div className="font-medium">{project.client}</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Clock size={16} className="text-primary-400" />
+                  <Clock size={16} style={{ color: 'var(--accent-primary)' }} />
                   <div>
-                    <div className="text-sm text-gray-400">Duration</div>
+                    <div className="text-sm" style={{ color: 'var(--text-muted)' }}>Duration</div>
                     <div className="font-medium">{project.duration}</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Tag size={16} className="text-primary-400" />
+                  <Tag size={16} style={{ color: 'var(--accent-primary)' }} />
                   <div>
-                    <div className="text-sm text-gray-400">Service</div>
+                    <div className="text-sm" style={{ color: 'var(--text-muted)' }}>Service</div>
                     <div className="font-medium">{project.service}</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Calendar size={16} className="text-primary-400" />
+                  <Calendar size={16} style={{ color: 'var(--accent-primary)' }} />
                   <div>
-                    <div className="text-sm text-gray-400">Year</div>
+                    <div className="text-sm" style={{ color: 'var(--text-muted)' }}>Year</div>
                     <div className="font-medium">{project.year}</div>
                   </div>
                 </div>
@@ -190,7 +208,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Tech Stack */}
-      <section className="py-16 bg-dark-800/30">
+      <section className="py-16" style={{ background: 'var(--bg-tertiary)' }}>
         <div className="container-custom">
           <motion.div
             variants={containerVariants}
@@ -199,7 +217,7 @@ const ProjectDetail = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-8 text-center">
-              Technologies <span className="text-primary-400">Used</span>
+              Technologies <span style={{ color: 'var(--accent-primary)' }}>Used</span>
             </motion.h2>
             <motion.div
               variants={containerVariants}
@@ -234,7 +252,7 @@ const ProjectDetail = () => {
             <motion.div variants={itemVariants} className="lg:col-span-2">
               <h2 className="text-2xl font-bold mb-6">Project Overview</h2>
               <div className="prose prose-invert max-w-none">
-                <p className="text-secondary leading-relaxed text-lg">
+                <p className="leading-relaxed text-lg" style={{ color: 'var(--text-secondary)' }}>
                   {project.description}
                 </p>
               </div>
@@ -250,8 +268,8 @@ const ProjectDetail = () => {
                     variants={itemVariants}
                     className="flex items-start space-x-3"
                   >
-                    <CheckCircle size={20} className="text-accent-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-secondary">{feature}</span>
+                    <CheckCircle size={20} style={{ color: 'var(--accent-success)' }} className="flex-shrink-0 mt-0.5" />
+                    <span style={{ color: 'var(--text-secondary)' }}>{feature}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -261,7 +279,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Project Gallery */}
-  <section className="py-16 bg-dark-800/30">
+  <section className="py-16" style={{ background: 'var(--bg-tertiary)' }}>
         <div className="container-custom">
           <motion.div
             variants={containerVariants}
@@ -270,7 +288,7 @@ const ProjectDetail = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-12 text-center">
-              Project <span className="text-primary-400">Gallery</span>
+              Project <span style={{ color: 'var(--accent-primary)' }}>Gallery</span>
             </motion.h2>
             <motion.div
               variants={containerVariants}
@@ -292,8 +310,14 @@ const ProjectDetail = () => {
                       e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD48L3N2Zz4=';
                     }}
                   />
-                  <div className="absolute inset-0 bg-dark-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <ExternalLink className="text-white" size={24} />
+                  <div 
+                    className="absolute inset-0 transition-opacity duration-300 flex items-center justify-center"
+                    style={{ 
+                      background: 'var(--surface)',
+                      opacity: 0
+                    }}
+                  >
+                    <ExternalLink style={{ color: 'var(--text-primary)' }} size={24} />
                   </div>
                 </motion.div>
               ))}
@@ -307,7 +331,8 @@ const ProjectDetail = () => {
         <div className="container-custom">
           {selectedImage && (
             <div
-              className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+              className="fixed inset-0 flex items-center justify-center z-50"
+              style={{ background: 'rgba(0, 0, 0, 0.75)' }}
               onClick={() => setSelectedImage(null)}
             >
               <motion.div
@@ -323,7 +348,11 @@ const ProjectDetail = () => {
                 />
                 <button
                   onClick={() => setSelectedImage(null)}
-                  className="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2"
+                  className="absolute top-4 right-4 rounded-full p-2"
+                  style={{ 
+                    color: 'var(--text-primary)', 
+                    background: 'rgba(0, 0, 0, 0.5)' 
+                  }}
                 >
                   <X size={24} />
                 </button>
@@ -338,7 +367,7 @@ const ProjectDetail = () => {
             className="text-center"
           >
             <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-8">
-              More <span className="text-primary-400">Projects</span>
+              More <span style={{ color: 'var(--accent-primary)' }}>Projects</span>
             </motion.h2>
             <motion.div
               variants={containerVariants}
@@ -363,10 +392,10 @@ const ProjectDetail = () => {
                           e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD48L3N2Zz4=';
                         }}
                       />
-                      <h3 className="font-semibold mb-2 group-hover:text-primary-400 transition-colors duration-300">
+                      <h3 className="font-semibold mb-2 transition-colors duration-300">
                         {otherProject.title}
                       </h3>
-                      <p className="text-gray-400 text-sm">
+                      <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
                         {otherProject.summary}
                       </p>
                     </Link>

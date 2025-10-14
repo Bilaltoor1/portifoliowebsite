@@ -21,10 +21,13 @@ const BlogDetail = () => {
 
   if (!blog) {
     return (
-      <div className="min-h-screen bg-dark-900 flex items-center justify-center">
+      <div 
+        className="min-h-screen flex items-center justify-center"
+        style={{ background: 'var(--bg-primary)' }}
+      >
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Blog Post Not Found</h1>
-          <p className="text-gray-400 mb-8">The blog post you're looking for doesn't exist.</p>
+          <h1 className="text-4xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>Blog Post Not Found</h1>
+          <p className="mb-8" style={{ color: 'var(--text-muted)' }}>The blog post you're looking for doesn't exist.</p>
           <Link to="/" className="btn-primary">
             Back to Home
           </Link>
@@ -57,21 +60,28 @@ const BlogDetail = () => {
   // Function to render blog content paragraphs
   const renderContent = (content) => {
     return content.split('\n\n').map((paragraph, index) => (
-      <p key={index} className="text-secondary leading-relaxed mb-6 text-lg">
+      <p key={index} className="leading-relaxed mb-6 text-lg" style={{ color: 'var(--text-secondary)' }}>
         {paragraph}
       </p>
     ));
   };
 
   return (
-    <div className="min-h-screen bg-dark-900 text-white">
+    <div className="min-h-screen" style={{ background: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-900/95 backdrop-blur-md border-b border-dark-700">
+      <nav 
+        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md"
+        style={{ 
+          background: 'var(--surface)',
+          borderBottom: '1px solid var(--border-color)'
+        }}
+      >
         <div className="container-custom">
           <div className="flex items-center justify-between h-16">
             <motion.button
               onClick={() => navigate('/')}
-              className="flex items-center space-x-2 text-secondary hover:text-primary-400 transition-colors duration-300"
+              className="flex items-center space-x-2 transition-colors duration-300"
+              style={{ color: 'var(--text-secondary)' }}
               whileHover={{ x: -5 }}
             >
               <ArrowLeft size={20} />
@@ -79,7 +89,8 @@ const BlogDetail = () => {
             </motion.button>
             
             <motion.button
-              className="flex items-center space-x-2 text-secondary hover:text-primary-400 transition-colors duration-300"
+              className="flex items-center space-x-2 transition-colors duration-300"
+              style={{ color: 'var(--text-secondary)' }}
               whileHover={{ scale: 1.05 }}
             >
               <Share2 size={20} />
@@ -98,19 +109,26 @@ const BlogDetail = () => {
             animate="visible"
           >
             {/* Breadcrumb */}
-            <motion.div variants={itemVariants} className="flex items-center space-x-2 text-sm text-gray-400 mb-6">
-              <Link to="/" className="hover:text-primary-400 transition-colors duration-300">
+            <motion.div variants={itemVariants} className="flex items-center space-x-2 text-sm mb-6" style={{ color: 'var(--text-muted)' }}>
+              <Link to="/" className="transition-colors duration-300">
                 Home
               </Link>
               <ChevronRight size={16} />
               <span>Blog</span>
               <ChevronRight size={16} />
-              <span className="text-white">{blog.title}</span>
+              <span style={{ color: 'var(--text-primary)' }}>{blog.title}</span>
             </motion.div>
 
             {/* Category */}
             <motion.div variants={itemVariants} className="mb-6">
-              <span className="px-3 py-1 bg-primary-600/20 text-primary-400 text-sm font-medium rounded-full border border-primary-500/30">
+              <span 
+                className="px-3 py-1 text-sm font-medium rounded-full"
+                style={{ 
+                  background: 'var(--card-bg)',
+                  color: 'var(--accent-primary)',
+                  border: '1px solid var(--card-border)'
+                }}
+              >
                 {blog.category}
               </span>
             </motion.div>
@@ -126,7 +144,8 @@ const BlogDetail = () => {
             {/* Meta Information */}
             <motion.div 
               variants={itemVariants}
-              className="flex flex-wrap items-center gap-6 mb-8 text-gray-400"
+              className="flex flex-wrap items-center gap-6 mb-8"
+              style={{ color: 'var(--text-muted)' }}
             >
               <div className="flex items-center space-x-2">
                 <User size={16} />
@@ -174,7 +193,14 @@ const BlogDetail = () => {
             <motion.article variants={itemVariants} className="lg:col-span-3">
               <div className="prose prose-lg prose-invert max-w-none">
                 {/* Blog Excerpt */}
-                <div className="text-xl text-secondary font-medium mb-8 p-6 bg-dark-800/50 rounded-xl border border-dark-600">
+                <div 
+                  className="text-xl font-medium mb-8 p-6 rounded-xl"
+                  style={{ 
+                    color: 'var(--text-secondary)', 
+                    background: 'var(--card-bg)',
+                    border: '1px solid var(--card-border)'
+                  }}
+                >
                   {blog.excerpt}
                 </div>
 
@@ -184,13 +210,18 @@ const BlogDetail = () => {
                 </div>
 
                 {/* Tags */}
-                <div className="pt-8 mt-12 border-t border-dark-600">
+                <div className="pt-8 mt-12" style={{ borderTop: '1px solid var(--border-color)' }}>
                   <h3 className="text-lg font-semibold mb-4">Tags</h3>
                   <div className="flex flex-wrap gap-2">
                     {blog.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-dark-700 text-secondary text-sm rounded-full hover:bg-primary-600/20 hover:text-primary-400 transition-colors duration-300 cursor-pointer"
+                        className="px-3 py-1 text-sm rounded-full transition-colors duration-300 cursor-pointer"
+                        style={{ 
+                          background: 'var(--card-bg)', 
+                          color: 'var(--text-secondary)',
+                          border: '1px solid var(--card-border)'
+                        }}
                       >
                         #{tag}
                       </span>
@@ -205,18 +236,18 @@ const BlogDetail = () => {
               <div className="sticky top-24 space-y-8">
                 {/* Table of Contents */}
                 <div className="card">
-                  <h3 className="font-semibold mb-4 text-primary-400">Table of Contents</h3>
+                  <h3 className="font-semibold mb-4" style={{ color: 'var(--accent-primary)' }}>Table of Contents</h3>
                   <nav className="space-y-2">
-                    <a href="#introduction" className="block text-sm text-gray-400 hover:text-primary-400 transition-colors duration-300">
+                    <a href="#introduction" className="block text-sm transition-colors duration-300" style={{ color: 'var(--text-muted)' }}>
                       Introduction
                     </a>
-                    <a href="#overview" className="block text-sm text-gray-400 hover:text-primary-400 transition-colors duration-300">
+                    <a href="#overview" className="block text-sm transition-colors duration-300" style={{ color: 'var(--text-muted)' }}>
                       Overview
                     </a>
-                    <a href="#implementation" className="block text-sm text-gray-400 hover:text-primary-400 transition-colors duration-300">
+                    <a href="#implementation" className="block text-sm transition-colors duration-300" style={{ color: 'var(--text-muted)' }}>
                       Implementation
                     </a>
-                    <a href="#conclusion" className="block text-sm text-gray-400 hover:text-primary-400 transition-colors duration-300">
+                    <a href="#conclusion" className="block text-sm transition-colors duration-300" style={{ color: 'var(--text-muted)' }}>
                       Conclusion
                     </a>
                   </nav>
@@ -224,29 +255,46 @@ const BlogDetail = () => {
 
                 {/* Author Info */}
                 <div className="card">
-                  <h3 className="font-semibold mb-4 text-primary-400">About the Author</h3>
+                  <h3 className="font-semibold mb-4" style={{ color: 'var(--accent-primary)' }}>About the Author</h3>
                   <div className="flex items-center space-x-3 mb-3">
-                    <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
-                      <User size={20} className="text-white" />
+                    <div 
+                      className="w-12 h-12 rounded-full flex items-center justify-center"
+                      style={{ background: 'var(--gradient-primary)' }}
+                    >
+                      <User size={20} style={{ color: 'var(--bg-primary)' }} />
                     </div>
                     <div>
                       <div className="font-medium">{blog.author}</div>
-                      <div className="text-sm text-gray-400">Full Stack Developer</div>
+                      <div className="text-sm" style={{ color: 'var(--text-muted)' }}>Full Stack Developer</div>
                     </div>
                   </div>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
                     Passionate about creating innovative web solutions and sharing knowledge with the developer community.
                   </p>
                 </div>
 
                 {/* Share */}
                 <div className="card">
-                  <h3 className="font-semibold mb-4 text-primary-400">Share this post</h3>
+                  <h3 className="font-semibold mb-4" style={{ color: 'var(--accent-primary)' }}>Share this post</h3>
                   <div className="flex space-x-2">
-                    <button className="flex-1 bg-dark-700 hover:bg-blue-600 text-white py-2 px-3 rounded-lg text-sm transition-colors duration-300">
+                    <button 
+                      className="flex-1 py-2 px-3 rounded-lg text-sm transition-colors duration-300"
+                      style={{ 
+                        background: 'var(--card-bg)', 
+                        color: 'var(--text-primary)',
+                        border: '1px solid var(--card-border)'
+                      }}
+                    >
                       Twitter
                     </button>
-                    <button className="flex-1 bg-dark-700 hover:bg-blue-800 text-white py-2 px-3 rounded-lg text-sm transition-colors duration-300">
+                    <button 
+                      className="flex-1 py-2 px-3 rounded-lg text-sm transition-colors duration-300"
+                      style={{ 
+                        background: 'var(--card-bg)', 
+                        color: 'var(--text-primary)',
+                        border: '1px solid var(--card-border)'
+                      }}
+                    >
                       LinkedIn
                     </button>
                   </div>
@@ -258,7 +306,7 @@ const BlogDetail = () => {
       </section>
 
       {/* Related Posts */}
-      <section className="py-16 bg-dark-800/30">
+      <section className="py-16" style={{ background: 'var(--bg-tertiary)' }}>
         <div className="container-custom">
           <motion.div
             variants={containerVariants}
@@ -267,7 +315,7 @@ const BlogDetail = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-12 text-center">
-              Related <span className="text-primary-400">Posts</span>
+              Related <span style={{ color: 'var(--accent-primary)' }}>Posts</span>
             </motion.h2>
             <motion.div
               variants={containerVariants}
@@ -292,25 +340,34 @@ const BlogDetail = () => {
                           e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD48L3N2Zz4=';
                         }}
                       />
-                      <div className="flex items-center space-x-2 text-xs text-gray-400 mb-2">
-                        <span className="px-2 py-1 bg-primary-600/20 text-primary-400 rounded">
+                      <div className="flex items-center space-x-2 text-xs mb-2" style={{ color: 'var(--text-muted)' }}>
+                        <span 
+                          className="px-2 py-1 rounded"
+                          style={{ 
+                            background: 'var(--card-bg)',
+                            color: 'var(--accent-primary)'
+                          }}
+                        >
                           {relatedBlog.category}
                         </span>
                         <span>•</span>
                         <span>{relatedBlog.readTime}</span>
                       </div>
-                      <h3 className="font-semibold mb-2 group-hover:text-primary-400 transition-colors duration-300 line-clamp-2">
+                      <h3 className="font-semibold mb-2 transition-colors duration-300 line-clamp-2">
                         {relatedBlog.title}
                       </h3>
-                      <p className="text-gray-400 text-sm line-clamp-2">
+                      <p className="text-sm line-clamp-2" style={{ color: 'var(--text-muted)' }}>
                         {relatedBlog.excerpt}
                       </p>
-                      <div className="flex items-center justify-between mt-4 pt-4 border-t border-dark-600">
-                        <div className="flex items-center space-x-2 text-xs text-gray-400">
+                      <div 
+                        className="flex items-center justify-between mt-4 pt-4"
+                        style={{ borderTop: '1px solid var(--border-color)' }}
+                      >
+                        <div className="flex items-center space-x-2 text-xs" style={{ color: 'var(--text-muted)' }}>
                           <User size={14} />
                           <span>{relatedBlog.author}</span>
                         </div>
-                        <span className="text-xs text-gray-400">{relatedBlog.date}</span>
+                        <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{relatedBlog.date}</span>
                       </div>
                     </Link>
                   </motion.div>
@@ -338,16 +395,21 @@ const BlogDetail = () => {
             className="max-w-2xl mx-auto text-center"
           >
             <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-4">
-              Stay Updated with My Latest <span className="text-primary-400">Insights</span>
+              Stay Updated with My Latest <span style={{ color: 'var(--accent-primary)' }}>Insights</span>
             </motion.h2>
-            <motion.p variants={itemVariants} className="text-gray-400 mb-8">
+            <motion.p variants={itemVariants} className="mb-8" style={{ color: 'var(--text-muted)' }}>
               Subscribe to my newsletter for the latest updates on web development, tutorials, and tech insights.
             </motion.p>
             <motion.form variants={itemVariants} className="flex gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:border-primary-500 transition-colors duration-300"
+                className="flex-1 px-4 py-3 rounded-lg focus:outline-none transition-colors duration-300"
+                style={{ 
+                  background: 'var(--card-bg)', 
+                  border: '1px solid var(--card-border)',
+                  color: 'var(--text-primary)'
+                }}
               />
               <button type="submit" className="btn-primary px-6">
                 Subscribe

@@ -46,8 +46,11 @@ const Experience = () => {
         
         {/* Icon */}
         <div className="relative z-10 flex-shrink-0">
-          <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-            <IconComponent className="w-6 h-6 text-white" />
+          <div 
+            className="w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300"
+            style={{ background: 'var(--gradient-primary)' }}
+          >
+            <IconComponent className="w-6 h-6" style={{ color: 'var(--bg-primary)' }} />
           </div>
         </div>
 
@@ -81,7 +84,7 @@ const Experience = () => {
                     </span>
                   ))}
                 </div>
-                <p className="text-gray-400 text-sm">
+                <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
                   Successfully delivered diverse web applications including e-commerce platforms, 
                   booking systems, and business websites for clients worldwide.
                 </p>
@@ -97,7 +100,7 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="section-padding bg-dark-800/30">
+    <section id="experience" className="section-padding" style={{ background: 'var(--bg-tertiary)' }}>
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
@@ -121,7 +124,8 @@ const Experience = () => {
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-gray-400 text-lg max-w-2xl mx-auto"
+            className="text-lg max-w-2xl mx-auto"
+            style={{ color: 'var(--text-muted)' }}
           >
             My professional journey and educational background that shaped my development career
           </motion.p>
@@ -136,8 +140,11 @@ const Experience = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.div variants={itemVariants} className="flex items-center space-x-3 mb-8">
-              <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                <Briefcase className="w-4 h-4 text-white" />
+              <div 
+                className="w-8 h-8 rounded-lg flex items-center justify-center"
+                style={{ background: 'var(--gradient-primary)' }}
+              >
+                <Briefcase className="w-4 h-4" style={{ color: 'var(--bg-primary)' }} />
               </div>
               <h3 className="text-2xl font-bold">Professional Experience</h3>
             </motion.div>
@@ -162,8 +169,11 @@ const Experience = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.div variants={itemVariants} className="flex items-center space-x-3 mb-8">
-              <div className="w-8 h-8 bg-accent-600 rounded-lg flex items-center justify-center">
-                <GraduationCap className="w-4 h-4 text-white" />
+              <div 
+                className="w-8 h-8 rounded-lg flex items-center justify-center"
+                style={{ background: 'var(--gradient-primary)' }}
+              >
+                <GraduationCap className="w-4 h-4" style={{ color: 'var(--bg-primary)' }} />
               </div>
               <h3 className="text-2xl font-bold">Education</h3>
             </motion.div>
@@ -188,7 +198,7 @@ const Experience = () => {
                 <Trophy className="w-6 h-6 text-accent-400" />
                 <h4 className="text-lg font-semibold">Continuous Learning</h4>
               </div>
-              <p className="text-gray-400 text-sm mb-4">
+              <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>
                 Always staying updated with the latest technologies and best practices in web development.
               </p>
               <div className="space-y-2">
@@ -221,7 +231,7 @@ const Experience = () => {
             <h3 className="text-2xl font-bold mb-4">
               Key <span className="text-primary-400">Achievements</span>
             </h3>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
               Milestones and accomplishments throughout my development journey
             </p>
           </motion.div>
@@ -262,13 +272,16 @@ const Experience = () => {
                 className="card text-center group hover:scale-105 transition-all duration-300"
                 whileHover={{ y: -10 }}
               >
-                <div className={`w-16 h-16 bg-dark-700 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <achievement.icon className="w-8 h-8 text-white" />
+                <div 
+                  className="w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                  style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)' }}
+                >
+                  <achievement.icon className="w-8 h-8" style={{ color: 'var(--accent-primary)' }} />
                 </div>
-                <div className="text-3xl font-bold text-primary-400 mb-2">
+                <div className="text-3xl font-bold mb-2" style={{ color: 'var(--accent-primary)' }}>
                   {achievement.number}
                 </div>
-                <div className="text-gray-400 font-medium">
+                <div className="font-medium" style={{ color: 'var(--text-muted)' }}>
                   {achievement.label}
                 </div>
               </motion.div>
@@ -285,13 +298,17 @@ const Experience = () => {
           className="text-center mt-16"
         >
           <motion.div
-            className="inline-block p-8 rounded-2xl border border-dark-700 bg-dark-800/40"
+            className="inline-block p-8 rounded-2xl"
+            style={{ 
+              border: '1px solid var(--card-border)', 
+              background: 'var(--card-bg)' 
+            }}
             whileHover={{ scale: 1.05 }}
           >
-            <h3 className="text-2xl font-bold mb-4 text-primary-400">
+            <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--accent-primary)' }}>
               Let's Build Something Amazing Together
             </h3>
-            <p className="text-gray-400 mb-6 max-w-md mx-auto">
+            <p className="mb-6 max-w-md mx-auto" style={{ color: 'var(--text-muted)' }}>
               Ready to start your next project? I'm here to help bring your ideas to life.
             </p>
             <motion.a
